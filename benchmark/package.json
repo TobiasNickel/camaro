@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "fast-xml-parser": "^3.17.4",
+    "txml": "^3.2.4",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  }
+}

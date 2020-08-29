@@ -13,17 +13,24 @@
                 data: {
                     labels: [
                         'camaro v6',
+                        'txml',
+                        'txml workers',
                         'fast-xml-parser',
+                        'fast-xml-parser workers',
                         'xml2js',
                         'xml-js',
                     ],
                     datasets: [
                         {
                             label: 'ops/sec',
-                            // data: [1820, 295, 52, 52], // 306kb
-                            data: [3539, 864, 148, 144], // 109kb
-                            // data: [4840, 1542, 266, 265], // 60kb
-                            // data: [6215, 9328, 2108, 2099], // 7kb
+                            // data: [1820, 0, 0, 295, 0,52, 52], // 306kb original
+                            data: [674, 332, 708, 99, 304, 37, 39], // 306kb i7-7700HQ node.js-v12.4.0
+                            // data: [3539, 0, 0, 864, 0, 148, 144], // 109kb original
+                            // data: [1565, 907, 1904, 261, 869, 107, 113], // 109kb i7-7700HQ node.js-v12.4.0
+                            // data: [4840, 0, 0, 1542, 0, 266, 265], // 60kb original
+                            // data: [2116, 1411, 3100, 510, 1509, 199, 205], // 60kb i7-7700HQ node.js-v12.4.0
+                            // data: [6215, 0, 0, 9328, 0, 2108, 2099], // 7kb original
+                            // data: [4409, 10593, 14006, 4274, 7452, 1538, 1556], // 7kb i7-7700HQ node.js-v12.4.0
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
