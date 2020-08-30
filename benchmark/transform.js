@@ -4,6 +4,7 @@ const fastXmlParser = require('fast-xml-parser')
 const xml2js = require('xml2js')
 const xmljs = require('xml-js')
 const txml = require('txml');
+const parse5 = require('parse5');
 const { resolve } = require('path')
 
 const WorkerPool = require('piscina')
@@ -43,7 +44,7 @@ async function bench({ name = '', fn, iterations = 10000, async = false } = {}) 
     }
 }
 
-const xml = fs.readFileSync(__dirname + '/./fixtures/100kb.xml', 'utf-8')
+const xml = fs.readFileSync(__dirname + '/./fixtures/300kb.xml', 'utf-8')
 const template = {
     cache_key: '/HotelListResponse/cacheKey',
     hotels: [
@@ -76,7 +77,7 @@ async function runBenchmarks() {
     // const dom = await txmlWorkerPool.runTask(xml) 
     // console.log(JSON.stringify(dom, undefined, '  '));
 
-
+    await bench({name: 'parse5', fn: () => parse5.parse(xml) });
 
     await bench({name: 'txml', fn: () => txml(xml) });
     await bench({name: 'txml worker', async: true, fn: async () => txmlWorkerPool.runTask(xml) });
